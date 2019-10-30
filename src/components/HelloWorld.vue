@@ -1,6 +1,6 @@
 <template>
     <div class="hello">
-        <slot name="title" :user="user">
+        <slot name="title" :user1="user" :auth="auth">
             <h1>{{ user.lastName }}</h1>
         </slot>
 <!--        <h1>{{ user.lastName }}</h1>-->
@@ -48,7 +48,8 @@
                 user: {
                     firstName: 'BalaBalala',
                     lastName: 'Ali'
-                }
+                },
+                auth:'Tian'
             }
         }
     }

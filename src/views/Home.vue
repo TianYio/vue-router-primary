@@ -2,8 +2,8 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App">
-      <template #title="{user}">
-        {{user.firstName}}
+      <template #title="{user1,auth}">
+        {{user1.firstName}}+{{auth}}
       </template>
     </HelloWorld>
   </div>
