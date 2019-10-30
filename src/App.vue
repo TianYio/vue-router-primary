@@ -1,23 +1,27 @@
 <template>
     <div id="app">
         <h1>Route props</h1>
-        <ul>
-            <li>
-                <router-link to="/">/</router-link>
-            </li>
-            <li>
-                <router-link to="/hello/you">/hello/you</router-link>
-            </li>
-            <li>
-                <router-link to="/static">/static</router-link>
-            </li>
-            <li>
-                <router-link to="/dynamic/1">/dynamic/1</router-link>
-            </li>
-            <li>
-                <router-link to="/attrs">/attrs</router-link>
-            </li>
-        </ul>
+
+        <div>
+            <router-link to="/">/</router-link>
+        </div>
+        <div>
+            <router-link to="/hello/you" v-slot="{href,route,navigate,isActive,isExactActive}">
+                <div :class="[isActive&&'router-link-active',isExactActive&&'router-link-exact-active']">
+                    <a :href="href" @click="navigate">{{route.fullPath}}</a>
+                </div>
+            </router-link>
+        </div>
+        <div>
+            <router-link to="/static">/static</router-link>
+        </div>
+        <div>
+            <router-link to="/dynamic/1">/dynamic/1</router-link>
+        </div>
+        <div>
+            <router-link to="/attrs">/attrs</router-link>
+        </div>
+
         <router-view class="view" foo="123"></router-view>
     </div>
 </template>
