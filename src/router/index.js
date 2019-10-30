@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Hello from '../views/Hello'
+import Home from '../views/Home'
 
 Vue.use(VueRouter);
 
@@ -12,12 +13,12 @@ function dynamicPropsFn(route) {
 }
 
 const routes = [
-    /*{
+    {
       path: '/',
       name: 'home',
       component: Home
     },
-    {
+    /*{
       path: '/about',
       name: 'about',
       // route level code-splitting
@@ -35,7 +36,8 @@ const routes = [
 const router = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,
-    routes
+    routes,
+    linkActiveClass:'router-link-active'
 });
 
 export default router

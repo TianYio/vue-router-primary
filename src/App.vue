@@ -3,15 +3,15 @@
         <h1>Route props</h1>
 
         <div>
-            <router-link to="/">/</router-link>
+            <router-link to="/" >/</router-link>
         </div>
-        <div>
+        <!--<div>
             <router-link to="/hello/you" v-slot="{href,route,navigate,isActive,isExactActive}">
                 <div :class="[isActive&&'router-link-active',isExactActive&&'router-link-exact-active']">
                     <a :href="href" @click="navigate">{{route.fullPath}}</a>
                 </div>
             </router-link>
-        </div>
+        </div>-->
         <div>
             <router-link to="/static">/static</router-link>
         </div>

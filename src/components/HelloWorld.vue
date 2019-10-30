@@ -1,6 +1,10 @@
 <template>
     <div class="hello">
-        <h1>{{ msg }}</h1>
+        <slot name="title" :user="user">
+            <h1>{{ user.lastName }}</h1>
+        </slot>
+<!--        <h1>{{ user.lastName }}</h1>-->
+        <!--        <h1>{{ msg }}</h1>-->
         <p>
             For a guide and recipes on how to configure / customize this project,<br>
             check out the
@@ -38,6 +42,14 @@
         name: 'HelloWorld',
         props: {
             msg: String
+        },
+        data() {
+            return {
+                user: {
+                    firstName: 'BalaBalala',
+                    lastName: 'Ali'
+                }
+            }
         }
     }
 </script>
