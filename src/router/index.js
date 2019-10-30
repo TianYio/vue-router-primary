@@ -25,10 +25,10 @@ const routes = [
     component: () => import(/!* webpackChunkName: "about" *!/ '../views/About.vue')
   }*/
   { path: '/', component: Hello }, // No props, no nothing
-  { path: '/hello/:name', component: Hello, props: true }, // Pass route.params to props
-  { path: '/static', component: Hello, props: { name: 'world' }}, // static values
-  { path: '/dynamic/:years', component: Hello, props: dynamicPropsFn }, // custom logic for mapping between route and props
-  { path: '/attrs', component: Hello, props: { name: 'attrs' }}
+  { path: '/hello/:name', component: Hello, props: true }, // Pass route.params to props,布尔类型
+  { path: '/static', component: Hello, props: { name: 'world' }}, // static values，对象类型
+  { path: '/dynamic/:years', component: Hello, props: dynamicPropsFn }, // custom logic for mapping between route and props，函数类型
+  { path: '/attrs', component: Hello, props: { name: 'attrs' }}//对象类型
 ]
 
 const router = new VueRouter({
