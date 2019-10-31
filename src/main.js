@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './router/router'
 import {Demo} from "./directives/directives";
 import {IsTrue} from "./filters/filter";
 
