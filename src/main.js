@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import {Demo} from "./directives/directives";
+import {IsTrue} from "./filters/filter";
 
 Vue.config.productionTip = false
 /*Vue.directive('demo', {
@@ -15,7 +16,8 @@ Vue.config.productionTip = false
         modifiers:${modifiers}`;
     }
 });*/
-Vue.use(Demo)
+Vue.use(Demo);
+Vue.use(IsTrue);
 new Vue({
     router,
     render: h => h(App)
