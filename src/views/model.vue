@@ -1,7 +1,8 @@
 <template>
     <div>
         model:{{model}}
-        <ModelComponent v-model="model"></ModelComponent>
+        title:{{title}}
+        <ModelComponent v-model="model" v-bind:title.sync="title"></ModelComponent>
     </div>
 </template>
 <script>
@@ -13,7 +14,8 @@
         },
         data(){
             return {
-                model:true
+                model:1,
+                title:'123'
             }
         }
 
