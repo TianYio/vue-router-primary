@@ -3,23 +3,41 @@
         <h1>Route props</h1>
 
         <div>
-            <router-link to="/" >/</router-link>
+            <router-link to="/">
+                url:/;route:{path: '/',name: 'home',component: Home}
+            </router-link>
         </div>
-        <!--<div>
-            <router-link to="/hello/you" v-slot="{href,route,navigate,isActive,isExactActive}">
+
+        <div>
+            <router-link to="/hello/you">
+                url:/hello/you;route:{ path: '/hello/:name',component: Home,props: true}
+            </router-link>
+        </div>
+
+        <div>
+            <router-link to="/static">
+                url:/static;route:{path: '/static',component: Home,props: {name: 'world'}}
+            </router-link>
+        </div>
+
+        <div>
+            <router-link to="/dynamic/1">
+                url:/dynamic/1;route:{ path: '/dynamic/:years',component: Home,props: dynamicPropsFn}
+            </router-link>
+        </div>
+
+        <div>
+            <router-link to="/attrs">
+                url:/attrs;route{path: '/attrs',component: Home,props: {name: 'attrs'}}
+            </router-link>
+        </div>
+
+        <div>
+            <router-link to="/about" v-slot="{href,route,navigate,isActive,isExactActive}">
                 <div :class="[isActive&&'router-link-active',isExactActive&&'router-link-exact-active']">
                     <a :href="href" @click="navigate">{{route.fullPath}}</a>
                 </div>
             </router-link>
-        </div>-->
-        <div>
-            <router-link to="/static">/static</router-link>
-        </div>
-        <div>
-            <router-link to="/dynamic/1">/dynamic/1</router-link>
-        </div>
-        <div>
-            <router-link to="/attrs">/attrs</router-link>
         </div>
 
         <router-view class="view" foo="123"></router-view>

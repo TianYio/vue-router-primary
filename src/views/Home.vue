@@ -1,12 +1,16 @@
 <template>
     <div class="home">
-        <img alt="Vue logo" src="../assets/logo.png">
-        <div v-demo:foo.a="1+1"></div>
+
+        <div>
+            <h2 class="hello">Hello + {{name}} + {{ $attrs }}</h2>
+        </div>
+
         <HelloWorld msg="Welcome to Your Vue.js App">
             <template #title="{user1,auth}">
                 {{user1.firstName}}+{{auth | isTrue}}
             </template>
         </HelloWorld>
+
     </div>
 </template>
 
@@ -18,6 +22,15 @@
         name: 'home',
         components: {
             HelloWorld
+        },
+        props: {
+            name: {
+                type: String,
+                default: 'Vue!'
+            }
+        },
+        created() {
+            console.log(123, this.$options.name)
         }
     }
 </script>

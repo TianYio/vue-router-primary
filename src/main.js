@@ -4,6 +4,7 @@ import router from './router'
 import {Demo} from "./directives/directives";
 import {IsTrue} from "./filters/filter";
 
+Vue.config.performance = true;
 Vue.config.productionTip = false
 /*Vue.directive('demo', {
     bind: function (el, {name, value, oldValue, expression, arg, modifiers}, vnode, oldVnode) {
